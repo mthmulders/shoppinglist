@@ -1,6 +1,16 @@
 language: java
 script: mvn package -Popenshift
 jdk:
-  - oraclejdk7
-  - oraclejdk8
-  - openjdk7
+- oraclejdk7
+- oraclejdk8
+- openjdk7
+deploy:
+  provider: openshift
+  user: m.th.mulders@xs4all.nl
+  password:
+    secure: FaPmkFwtL8+DTrvG/TqVYJ/TdXIWQXf45m7hU0kcgPFeX5Fz4ATRzrsFAh9QaQ96xqsnVdnXAqBWUnBFPCmnh8By+n2IxiC9SqgDPQ4WZaCO4W0EajcHX2PBhRPkXE2y/+0gMTlN3alqQpEBrRvaCeWPlsMMOnSk/Gbo57bKIBQ=
+  app: shopping2
+  domain: mulders
+  on:
+    repo: mthmulders/shoppinglist
+    jdk: openjdk7
