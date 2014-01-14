@@ -1,11 +1,11 @@
 language: java
 script: mvn package -Popenshift
 before_script:
-- npm install -g grunt-cli
+  - npm install -g grunt-cli
 jdk:
-- oraclejdk7
-- oraclejdk8
-- openjdk7
+  - oraclejdk7
+  - oraclejdk8
+  - openjdk7
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
