@@ -1,5 +1,5 @@
 language: java
-script: mvn package -Popenshift
+script: mvn package
 before_install:
   - npm install -g grunt-cli
   - sudo apt-get install libcompass-ruby1.8
