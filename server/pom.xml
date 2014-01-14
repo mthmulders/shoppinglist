@@ -6,6 +6,7 @@
 
    <artifactId>shoppinglist-server</artifactId>
    <packaging>pom</packaging>
+   <name>Shopping List (Server)</name>
 
    <parent>
       <groupId>tk.mulders.shoppinglist</groupId>

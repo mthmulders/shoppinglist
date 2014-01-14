@@ -4,6 +4,7 @@
 
    <artifactId>shoppinglist-client</artifactId>
    <packaging>war</packaging>
+   <name>Shopping List (Client)</name>
 
    <parent>
       <groupId>tk.mulders.shoppinglist</groupId>

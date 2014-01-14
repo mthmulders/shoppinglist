@@ -6,6 +6,7 @@
 
    <artifactId>shoppinglist-domain</artifactId>
    <packaging>jar</packaging>
+   <name>Shopping List (Domain)</name>
 
    <parent>
       <groupId>tk.mulders.shoppinglist</groupId>

@@ -6,6 +6,7 @@
 
    <artifactId>shoppinglist-api</artifactId>
    <packaging>war</packaging>
+   <name>Shopping List (Web API)</name>
 
    <parent>
       <groupId>tk.mulders.shoppinglist</groupId>
