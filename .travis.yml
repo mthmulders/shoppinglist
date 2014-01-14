@@ -1,6 +1,6 @@
 language: java
 script: mvn package -Popenshift
-before_script:
+before_install:
   - npm install -g grunt-cli
 jdk:
   - oraclejdk7
