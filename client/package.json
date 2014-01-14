@@ -1,6 +1,6 @@
 {
-  "name": "m",
-  "version": "0.0.0",
+  "name": "shoppinglist",
+  "version": "1.0.0-SNAPSHOT",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
