@@ -1,12 +1,13 @@
 'use strict';
 
-angular.module('mApp', [
+angular.module('shoppingListApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute'
 ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
+    console.log('Configuring routeProvider');
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -15,4 +16,4 @@ angular.module('mApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
