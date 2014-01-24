@@ -1,6 +1,6 @@
 language: java
 before_install:
-  - sudo npm install -g gulp
+  - npm install -g gulp
   - sudo gem install compass
 jdk:
   - oraclejdk7
