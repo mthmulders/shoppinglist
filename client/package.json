@@ -9,7 +9,8 @@
     "gulp-usemin": "~0.1.1",
     "gulp-imagemin": "~0.1.4",
     "gulp-compass": "~1.0.9",
-    "gulp-angular-templatecache": "~0.3.0"
+    "gulp-angular-templatecache": "~0.3.0",
+    "gulp-minify-html": "~0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"

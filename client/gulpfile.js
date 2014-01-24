@@ -5,13 +5,14 @@ var usemin = require('gulp-usemin');
 var compass = require('gulp-compass');
 var path = require('path');
 var templates = require('gulp-angular-templatecache');
+var minifyHTML = require('gulp-minify-html');
 
 // Minify / uglify application Javascript code
 gulp.task('scripts', function() {
     // Minify and copy all JavaScript (except vendor scripts)
-    return gulp.src(['./app/scripts/**/*.js', '.tmp/js/templates.js'])
+    return gulp.src(['./app/scripts/**/*.js'])
         .pipe(uglify())
-        .pipe(gulp.dest('./.tmp/js'));
+        .pipe(gulp.dest('./tmp/scripts'));
 });
 
 // Copy all static images
@@ -47,10 +48,12 @@ gulp.task('usemin', function() {
         .pipe(gulp.dest('./build/'));
 });
 
-gulp.task('templateCache', function() {
+// Create a template cache module
+gulp.task('templates', function() {
     gulp.src('./app/views/*.html')
+        .pipe(minifyHTML({ quotes: true }))
         .pipe(templates('templates.js'))
-        .pipe(gulp.dest('./.tmp/js'));
+        .pipe(gulp.dest('./app/scripts'));
 });
 
-gulp.task('default', ['templateCache', 'scripts', 'compass', 'images', 'usemin']);
+gulp.task('default', ['templates', 'scripts', 'compass', 'images', 'usemin']);
