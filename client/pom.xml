@@ -32,21 +32,8 @@
                      </arguments>
                   </configuration>
                </execution>
-               <execution>
-                  <id>Run Gulp: create template cache</id>
-                  <phase>prepare-package</phase>
-                  <goals>
-                     <goal>exec</goal>
-                  </goals>
-                  <configuration>
-                     <executable>gulp</executable>
-                     <arguments>
-                        <argument>templates</argument>
-                     </arguments>
-                  </configuration>
-               </execution>
                 <execution>
-                    <id>Run Gulp: create dist</id>
+                    <id>Run Gulp</id>
                     <phase>prepare-package</phase>
                     <goals>
                         <goal>exec</goal>

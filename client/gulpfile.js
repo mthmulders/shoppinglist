@@ -62,7 +62,7 @@ gulp.task('templates', function() {
     gulp.src('./app/views/*.html')
         .pipe(minifyHTML({ quotes: true }))
         .pipe(templates('templates.js'))
-        .pipe(gulp.dest('./app/scripts'));
+        .pipe(gulp.dest('./build/scripts'));
 });
 
-gulp.task('default', ['scripts', 'compass', 'images', 'usemin']);
+gulp.task('default', ['templates', 'scripts', 'compass', 'images', 'usemin']);
