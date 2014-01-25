@@ -6,6 +6,8 @@ jdk:
   - oraclejdk7
   - oraclejdk8
   - openjdk7
+after_success:
+  git commit -a -m "Added deployment archive for Travis-CI build number: $TRAVIS_JOB_ID"
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
