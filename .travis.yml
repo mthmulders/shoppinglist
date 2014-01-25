@@ -9,7 +9,8 @@ jdk:
 after_success:
 - git config user.name '$GIT_NAME'
 - git config user.email '$GIT_EMAIL'
-- git commit -a -m "Added deployment archive for Travis-CI build number $TRAVIS_JOB_ID"
+- git add -f deployments/ROOT.war
+- git commit -m "Added deployment archive for Travis-CI build number $TRAVIS_JOB_ID"
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
