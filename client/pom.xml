@@ -33,15 +33,28 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>Run Grunt</id>
+                  <id>Run Gulp: create template cache</id>
                   <phase>prepare-package</phase>
                   <goals>
                      <goal>exec</goal>
                   </goals>
                   <configuration>
                      <executable>gulp</executable>
+                     <arguments>
+                        <argument>templates</argument>
+                     </arguments>
                   </configuration>
                </execution>
+                <execution>
+                    <id>Run Gulp: create dist</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>gulp</executable>
+                    </configuration>
+                </execution>
             </executions>
          </plugin>
          <plugin>

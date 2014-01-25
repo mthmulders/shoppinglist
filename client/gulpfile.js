@@ -1,16 +1,25 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
+var jshint = require('gulp-jshint');
 var usemin = require('gulp-usemin');
 var compass = require('gulp-compass');
 var path = require('path');
 var templates = require('gulp-angular-templatecache');
+var clean = require('gulp-clean');
 var minifyHTML = require('gulp-minify-html');
+
+gulp.task('clean', function() {
+    return gulp.src(['build', 'tmp', 'app/scripts/templates.js'], {read: false})
+        .pipe(clean());
+});
 
 // Minify / uglify application Javascript code
 gulp.task('scripts', function() {
     // Minify and copy all JavaScript (except vendor scripts)
     return gulp.src(['./app/scripts/**/*.js'])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('default'))
         .pipe(uglify())
         .pipe(gulp.dest('./tmp/scripts'));
 });
@@ -29,8 +38,8 @@ gulp.task('compass', function() {
         .pipe(compass({
             project: path.join(__dirname, 'app'),
             sass: 'styles',
-            css: '.tmp/css',
-            javascript: './.tmp/js',
+            css: 'build/css',
+            javascript: './tmp/js',
             import_path: 'bower_components',
             style: 'compressed'
         }))
@@ -56,4 +65,4 @@ gulp.task('templates', function() {
         .pipe(gulp.dest('./app/scripts'));
 });
 
-gulp.task('default', ['templates', 'scripts', 'compass', 'images', 'usemin']);
+gulp.task('default', ['scripts', 'compass', 'images', 'usemin']);
