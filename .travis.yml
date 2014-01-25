@@ -13,6 +13,7 @@ after_success:
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
+  skip_cleanup: true
   password:
     secure: FaPmkFwtL8+DTrvG/TqVYJ/TdXIWQXf45m7hU0kcgPFeX5Fz4ATRzrsFAh9QaQ96xqsnVdnXAqBWUnBFPCmnh8By+n2IxiC9SqgDPQ4WZaCO4W0EajcHX2PBhRPkXE2y/+0gMTlN3alqQpEBrRvaCeWPlsMMOnSk/Gbo57bKIBQ=
   app: shopping2
