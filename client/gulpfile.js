@@ -29,7 +29,7 @@ gulp.task('images', function() {
     return gulp.src('./app/images/**')
         // Pass in options to the task
         .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest('./build/img'));
+        .pipe(gulp.dest('../server/api/src/main/webapp/img'));
 });
 
 // Compile stylesheets
@@ -43,7 +43,7 @@ gulp.task('compass', function() {
             import_path: 'bower_components',
             style: 'compressed'
         }))
-        .pipe(gulp.dest('./build/styles'));
+        .pipe(gulp.dest('../server/api/src/main/webapp/styles'));
 });
 
 // Replace minified css and js
@@ -54,7 +54,7 @@ gulp.task('usemin', function() {
             htmlmin: true,
             jsmin: true
         }))
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('../server/api/src/main/webapp'));
 });
 
 // Create a template cache module
@@ -62,7 +62,7 @@ gulp.task('templates', function() {
     gulp.src('./app/views/*.html')
         .pipe(minifyHTML({ quotes: true }))
         .pipe(templates('templates.js'))
-        .pipe(gulp.dest('./build/scripts'));
+        .pipe(gulp.dest('../server/api/src/main/webapp/scripts'));
 });
 
 gulp.task('default', ['templates', 'scripts', 'compass', 'images', 'usemin']);
