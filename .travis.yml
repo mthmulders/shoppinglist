@@ -1,16 +1,8 @@
 language: java
-before_install:
-- npm install -g gulp
-- gem install compass
 jdk:
 - oraclejdk7
 - oraclejdk8
 - openjdk7
-after_success:
-- git config user.name '$GIT_NAME'
-- git config user.email '$GIT_EMAIL'
-- git add -f deployments/ROOT.war
-- git commit -m "Added deployment archive for Travis-CI build number $TRAVIS_JOB_ID"
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
@@ -22,6 +14,3 @@ deploy:
   on:
     repo: mthmulders/shoppinglist
     jdk: openjdk7
-env:
-  global:
-    secure: SK5WpF7KYF5D+argH6krYnsb5GVv2FvNryKI1ZJpZ6CbNhbcPcjicsBWVMao9nK9ccGTsAFig2TfeMLS1+bVMM4E4XW/SPFsx3HAJp23ErMHBn5tm0EqJIxKFb8GflDadM2noBq7//h/Ldu+8mP2OvFKvVslTHSUODFGjq4PKTU=
