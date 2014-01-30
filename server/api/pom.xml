@@ -33,7 +33,7 @@
                   <artifactId>maven-war-plugin</artifactId>
                   <version>2.4</version>
                   <configuration>
-                     <outputDirectory>${project.parent.parent.basedir}/deployments</outputDirectory>
+                     <outputDirectory>${project.parent.parent.basedir}/webapps</outputDirectory>
                      <warName>ROOT</warName>
                   </configuration>
                </plugin>
