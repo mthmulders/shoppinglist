@@ -15,6 +15,13 @@
     </parent>
 
     <dependencies>
+        <!-- modules -->
+        <dependency>
+            <groupId>tk.mulders.shoppinglist</groupId>
+            <artifactId>shoppinglist-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- Dependency Injection -->
         <dependency>
             <groupId>com.google.inject.extensions</groupId>
