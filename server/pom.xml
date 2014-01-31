@@ -2,32 +2,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-   <artifactId>shoppinglist-server</artifactId>
-   <packaging>pom</packaging>
-   <name>Shopping List (Server)</name>
+    <artifactId>shoppinglist-server</artifactId>
+    <packaging>pom</packaging>
+    <name>Shopping List (Server)</name>
 
-   <parent>
-      <groupId>tk.mulders.shoppinglist</groupId>
-      <artifactId>shoppinglist-parent</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-   </parent>
+    <parent>
+        <groupId>tk.mulders.shoppinglist</groupId>
+        <artifactId>shoppinglist-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 
-   <modules>
-      <module>domain</module>
-      <module>api</module>
-   </modules>
+    <modules>
+        <module>domain</module>
+        <module>api</module>
+    </modules>
 
-   <dependencyManagement>
-      <dependencies>
-         <!-- modules -->
-         <dependency>
-            <groupId>tk.mulders.shoppinglist</groupId>
-            <artifactId>shoppinglist-client</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-         </dependency>
-      </dependencies>
-   </dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <!-- modules -->
+            <dependency>
+                <groupId>tk.mulders.shoppinglist</groupId>
+                <artifactId>shoppinglist-client</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
