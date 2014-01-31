@@ -22,6 +22,7 @@
     <properties>
         <guice.version>3.0</guice.version>
         <jersey.version>1.18</jersey.version>
+        <lombok.version>1.12.4</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -32,6 +33,12 @@
                 <artifactId>shoppinglist-client</artifactId>
                 <version>${project.version}</version>
                 <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
             <!-- Dependency Injection -->

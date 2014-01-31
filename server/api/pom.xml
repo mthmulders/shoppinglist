@@ -22,6 +22,11 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <!-- Dependency Injection -->
         <dependency>
             <groupId>com.google.inject.extensions</groupId>
