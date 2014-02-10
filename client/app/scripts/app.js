@@ -5,7 +5,7 @@ angular.module('shoppingListApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'templates'
+  'views'
 ])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider

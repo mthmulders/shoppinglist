@@ -5,9 +5,10 @@ var jshint = require('gulp-jshint');
 var usemin = require('gulp-usemin');
 var compass = require('gulp-compass');
 var path = require('path');
-var templates = require('gulp-angular-templatecache');
+var ngHtml2Js = require('gulp-ng-html2js');
 var clean = require('gulp-clean');
 var minifyHTML = require('gulp-minify-html');
+var concat = require('gulp-concat');
 
 gulp.task('clean', function() {
     return gulp.src(['build', 'tmp', 'app/scripts/templates.js'], {read: false})
@@ -58,11 +59,13 @@ gulp.task('usemin', function() {
 });
 
 // Create a template cache module
-gulp.task('templates', function() {
+gulp.task('views', function() {
     gulp.src('./app/views/*.html')
-        .pipe(minifyHTML({ quotes: true }))
-        .pipe(templates('templates.js'))
+        .pipe(minifyHTML({ empty: true, spare: true, quotes: true }))
+        .pipe(ngHtml2Js({moduleName:'views', prefix: '/app/views/'}))
+        .pipe(concat('views.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('../server/api/src/main/webapp/scripts'));
 });
 
-gulp.task('default', ['templates', 'scripts', 'compass', 'images', 'usemin']);
+gulp.task('default', ['views', 'scripts', 'compass', 'images', 'usemin']);
