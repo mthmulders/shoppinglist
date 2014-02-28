@@ -19,13 +19,11 @@
         <dependency>
             <groupId>tk.mulders.shoppinglist</groupId>
             <artifactId>shoppinglist-domain</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <!-- Logging -->
@@ -56,6 +54,12 @@
         <dependency>
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-json</artifactId>
+        </dependency>
+
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
 
