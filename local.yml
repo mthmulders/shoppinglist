@@ -1,0 +1,10 @@
+server:
+  http:
+    rootPath: /api/*
+database:
+  driverClass:
+  user: sa
+  password:
+  url:
+  maxWaitForConnection: 1s
+  validationQuery:
