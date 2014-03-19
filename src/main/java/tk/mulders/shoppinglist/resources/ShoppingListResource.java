@@ -19,7 +19,7 @@ import com.codahale.metrics.annotation.Timed;
 import io.dropwizard.hibernate.UnitOfWork;
 import lombok.AllArgsConstructor;
 import tk.mulders.shoppinglist.core.ShoppingList;
-import tk.mulders.shoppinglist.jdbi.ShoppingListDAO;
+import tk.mulders.shoppinglist.db.ShoppingListDAO;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @AllArgsConstructor
-@Path("/v1/shoppinglist")
+@Path("/shoppinglist")
 @Produces(MediaType.APPLICATION_JSON)
 public class ShoppingListResource {
     private final ShoppingListDAO shoppingListDAO;

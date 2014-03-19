@@ -13,14 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tk.mulders.shoppinglist.jdbi;
+package tk.mulders.shoppinglist.db;
 
-import org.skife.jdbi.v2.sqlobject.SqlQuery;
+import io.dropwizard.hibernate.AbstractDAO;
+import org.hibernate.SessionFactory;
 import tk.mulders.shoppinglist.core.ShoppingList;
 
 import java.util.List;
 
-public interface ShoppingListDAO {
-    @SqlQuery("select * from shoppinglist")
-    List<ShoppingList> all();
+public class ShoppingListDAO extends AbstractDAO<ShoppingList> {
+    public ShoppingListDAO(SessionFactory factory) {
+        super(factory);
+    }
+
+    public List<ShoppingList> all() {
+        return list(criteria());
+    }
 }
