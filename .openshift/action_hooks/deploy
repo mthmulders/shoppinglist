@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd $OPENSHIFT_REPO_DIR
+
+# IP Settings
+sed -i 's/@OPENSHIFT_DIY_IP/'"$OPENSHIFT_DIY_IP"'/g' openshift.yml
+sed -i 's/@OPENSHIFT_DIY_PORT/'"$OPENSHIFT_DIY_PORT"'/g' openshift.yml
+
+# Database settings
+sed -i 's/@OPENSHIFT_POSTGRESQL_DB_USERNAME/'"$OPENSHIFT_POSTGRESQL_DB_USERNAME"'/g' openshift.yml
+sed -i 's/@OPENSHIFT_POSTGRESQL_DB_PASSWORD/'"$OPENSHIFT_POSTGRESQL_DB_PASSWORD"'/g' openshift.yml
+sed -i 's/@OPENSHIFT_POSTGRESQL_DB_HOST/'"$OPENSHIFT_POSTGRESQL_DB_HOST"'/g' openshift.yml
+sed -i 's/@OPENSHIFT_POSTGRESQL_DB_PORT/'"$OPENSHIFT_POSTGRESQL_DB_PORT"'/g' openshift.yml
+sed -i 's/@OPENSHIFT_APP_NAME/'"$OPENSHIFT_APP_NAME"'/g' openshift.yml

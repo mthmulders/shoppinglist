@@ -1,6 +1,14 @@
 server:
+  applicationConnectors:
+    - type: http
+      bindHost: localhost
+      port: 8080
   gzip:
       enabled: true
+logging:
+  level: INFO
+  appenders:
+    - type: console
 database:
   driverClass: org.h2.Driver
   user: sa
