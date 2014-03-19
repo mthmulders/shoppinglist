@@ -49,7 +49,7 @@ public class ShoppingListApplication extends Application<ShoppingListConfigurati
             }
         });
         bootstrap.addBundle(hibernateBundle);
-        bootstrap.addBundle(new AssetsBundle("/src/main/resources/app"));
+        bootstrap.addBundle(new AssetsBundle("/app", "/", "index.html", "static"));
     }
 
     @Override
