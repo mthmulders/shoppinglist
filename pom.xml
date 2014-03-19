@@ -20,7 +20,7 @@ limitations under the License.
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tk.mulders.shoppinglist</groupId>
-    <artifactId>shoppinglist-parent</artifactId>
+    <artifactId>shoppinglist-server</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Electronic Shopping List</name>
     <description>Electronic Shopping List</description>
