@@ -19,12 +19,12 @@ import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
-import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import org.skife.jdbi.v2.DBI;
 import tk.mulders.shoppinglist.core.ShoppingList;
+import tk.mulders.shoppinglist.db.ShoppingListDAO;
+import tk.mulders.shoppinglist.resources.ShoppingListResource;
 
 public class ShoppingListApplication extends Application<ShoppingListConfiguration> {
     private final HibernateBundle<ShoppingListConfiguration> hibernateBundle =
@@ -54,7 +54,8 @@ public class ShoppingListApplication extends Application<ShoppingListConfigurati
 
     @Override
     public void run(ShoppingListConfiguration configuration, Environment environment) throws Exception {
-
+        environment.jersey().setUrlPattern("/api/");
+        environment.jersey().register(new ShoppingListResource(new ShoppingListDAO(hibernateBundle.getSessionFactory())));
     }
 
     public static void main(String[] args) throws Exception {
