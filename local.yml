@@ -1,6 +1,6 @@
-#server:
-#  http:
-#    rootPath: /api/*
+server:
+  gzip:
+      enabled: true
 database:
   driverClass: org.h2.Driver
   user: sa

@@ -1,2 +1,3 @@
-http:
-  rootPath: /api/*
+server:
+  gzip:
+      enabled: true
