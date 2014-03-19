@@ -87,10 +87,11 @@ module.exports = function ( grunt ) {
     /**
      * The directories to delete when `grunt clean` is executed.
      */
-    clean: [ 
-      '<%= build_dir %>', 
-      '<%= compile_dir %>'
-    ],
+    clean: {
+      build: ['<%= build_dir %>'],
+      release: ['<%= compile_dir %>'],
+      options: { force: true }
+    },
 
     /**
      * The `copy` task just copies files from A to B. We use it here to copy
