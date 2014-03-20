@@ -1,5 +1,7 @@
 target
 *.iml
-webapps
 .idea
+src/main/app/node_modules
+src/main/app/vendor
+dependency-reduced-pom.xml
 

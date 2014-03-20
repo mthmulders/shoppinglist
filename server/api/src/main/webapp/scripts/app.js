@@ -1,1 +1,0 @@
-"use strict";angular.module("shoppingListApp",["ngCookies","ngResource","ngSanitize","ngRoute","views"]).config(["$routeProvider",function(e){e.when("/",{templateUrl:"main.html",controller:"MainCtrl"}).otherwise({redirectTo:"/"})}]),angular.module("shoppingListApp").controller("MainCtrl",["$scope",function(e){e.awesomeThings=["HTML5 Boilerplate","AngularJS","Karma"]}]);

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $OPENSHIFT_REPO_DIR
+
+java -jar target/shoppinglist-server-*.jar db migrate openshift.yml
+java -jar target/shoppinglist-server-*.jar server openshift.yml
