@@ -10,8 +10,6 @@ logging:
       currentLogFilename: ./logs/shopping.log
       archivedLogFilenamePattern: ./logs/shopping-%d.log.gz
       archivedFileCount: 5
-  gzip:
-      enabled: true
 database:
   driverClass: org.postgresql.Driver
   user: @OPENSHIFT_POSTGRESQL_DB_USERNAME@

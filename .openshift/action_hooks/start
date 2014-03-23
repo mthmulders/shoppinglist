@@ -2,5 +2,6 @@
 
 cd $OPENSHIFT_REPO_DIR
 
-java -jar target/shoppinglist-server-*.jar db migrate openshift.yml
-java -jar target/shoppinglist-server-*.jar server openshift.yml
+java -jar target/shoppinglist-server-*.jar db migrate openshift.yml > $OPENSHIFT_DATA_DIR/migrate.`date +"%Y-%m-%d-%I.%M.%S"`.log
+java -jar target/shoppinglist-server-*.jar server openshift.yml > $OPENSHIFT_DATA_DIR/start.`date +"%Y-%m-%d-%I.%M.%S"`.log
+
