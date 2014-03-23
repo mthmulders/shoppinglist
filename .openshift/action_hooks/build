@@ -2,4 +2,4 @@
 
 cd $OPENSHIFT_REPO_DIR
 
-mvn clean package
+mvn -s $OPENSHIFT_REPO_DIR/.openshift/settings.xml clean package
