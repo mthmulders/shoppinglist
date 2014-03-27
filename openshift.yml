@@ -3,6 +3,10 @@ server:
     - type: http
       bindHost: @OPENSHIFT_DIY_IP@
       port: @OPENSHIFT_DIY_PORT@
+  adminConnectors:
+    - type: http
+      bindHost: @OPENSHIFT_DIY_IP@
+      port: @OPENSHIFT_DIY_PORT@
 logging:
   level: WARN
   appenders:
