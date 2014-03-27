@@ -6,7 +6,7 @@ server:
   adminConnectors:
     - type: http
       bindHost: @OPENSHIFT_DIY_IP@
-      port: @OPENSHIFT_DIY_PORT@
+      port: 8081 # This one cannot be set by an environment var because it is not meant to be exposed to the outside.
 logging:
   level: WARN
   appenders:
