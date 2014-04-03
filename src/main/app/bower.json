@@ -1,13 +1,13 @@
 {
-  "name": "ng-boilerplate",
-  "version": "0.3.1",
+  "name": "shoppinglist",
+  "version": "1.0.0",
   "devDependencies": {
-    "angular": "~1.2.14",
-    "angular-mocks": "~1.2.14",
-    "bootstrap": "~2.3.2",
+    "angular": "~1.2.15",
+    "angular-mocks": "~1.2.15",
     "angular-bootstrap": "~0.10.0",
-    "angular-ui-router": "~0.2.10",
-    "angular-ui-utils": "~0.1.1"
+    "bootstrap": "~3.1.1",
+    "bootswatch": "~3.1.1",
+    "font-awesome": "~4.0.0"
   },
   "dependencies": {}
 }
