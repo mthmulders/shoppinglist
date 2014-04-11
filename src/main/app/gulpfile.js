@@ -1,13 +1,15 @@
 var bower = require('gulp-bower'),
     concat = require('gulp-concat'),
     gulp = require('gulp'),
+    protractor = require("gulp-protractor").protractor,
     uglify = require('gulp-uglify');
 
 var paths = {
-    scripts: ['src/**/*.js'],
+    assets: ['src/index.html'],
     libs: ['vendor/!(jquery)/*.min.js'],
+    scripts: ['src/**/*.js'],
     styles: ['vendor/bootswatch/spacelab/*.min.css'],
-    assets: ['src/index.html']
+    tests: ['test/**/*.js']
 }
 
 gulp.task('scripts', function() {
@@ -27,6 +29,15 @@ gulp.task('libs', function() {
     return gulp.src(paths.libs)
         .pipe(concat('libs.min.js'))
         .pipe(gulp.dest('../resources/app/js'));
+});
+
+gulp.task('test', function() {
+    return gulp.src(paths.tests)
+        .pipe(protractor({
+            configFile: "test/protractor.config.js",
+            args: ['--baseUrl', 'http://127.0.0.1:8000']
+        }))
+        .on('error', function(e) { throw e });
 });
 
 gulp.task('bower', function() {
