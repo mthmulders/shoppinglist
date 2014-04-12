@@ -21,3 +21,5 @@ database:
   url: jdbc:postgresql://@OPENSHIFT_POSTGRESQL_DB_HOST@:@OPENSHIFT_POSTGRESQL_DB_PORT@/@OPENSHIFT_APP_NAME@
   maxWaitForConnection: 1s
   validationQuery:
+  properties:
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect

@@ -8,3 +8,5 @@ database:
   url: jdbc:postgresql://localhost:5432/travis_ci_test
   maxWaitForConnection: 1s
   validationQuery:
+  properties:
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
