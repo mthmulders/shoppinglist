@@ -5,6 +5,11 @@ notifications:
   email:
     on_success: always
     on_failure: always
+addons:
+  postgresql: "9.2"
+  sauce_connect: true
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
 deploy:
   provider: openshift
   user: m.th.mulders@xs4all.nl
@@ -16,3 +21,7 @@ deploy:
   on:
     repo: mthmulders/shoppinglist
     jdk: openjdk7
+env:
+  global:
+  - secure: BqS8UgJVm36BNbmCa0URE4EwoP2Kw9kIMMJwTkPP6JM696anWsXOHEjePzGKj7zF44wlNKoBsFybhPkCcgiAKOGbbOQCQHFWphJGEnO6PXGNBOJMC34nazj5VqdT1obV4dzpX/Gz48NtS3iFUYJrPKhsu/g17gZf384OwdISQYU=
+  - secure: jsvlgPL4C+my+Dc3dU1VWOphK4Yq2YwaWzGoCDGRL4Gxv7JIxS55xsGrka2pbGKUztwqCmJYE66Qp4/BeaBtLQKOtQ2zXqTh78ka4vsK6zJEKXP8pD6RPXRZ5X9dezxHpFtK+2VmIQUvWfmb0j0/A79Bo+4jIc2L9TXE1uQRdUc=

@@ -1,0 +1,10 @@
+logging:
+  level: INFO
+  appenders:
+    - type: console
+database:
+  driverClass: org.postgresql.Driver
+  user: postgres
+  url: jdbc:postgresql://localhost:5432/travis_ci_test
+  maxWaitForConnection: 1s
+  validationQuery:
